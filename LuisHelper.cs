@@ -50,17 +50,18 @@ namespace Microsoft.BotBuilderSamples
                 //  var (intent, score) = luisresult.GetTopScoringIntent();
 
                  var (intent, score) = recognizerResult.GetTopScoringIntent();
-                if (intent == "SAP")
+                if (intent == "sap_intent")
                 {
 
-                    incidentDetails.SAP = "true";
+                    incidentDetails.sap_intent = "true";
+                    incidentDetails.None = "true";
 
 
                 }
                 else
                 {
-                    incidentDetails.SAP = "false";
-
+                    incidentDetails.sap_intent = "false";
+                    incidentDetails.None = "false";
                 }
 
                 if (intent == "create_incident")

@@ -46,7 +46,7 @@ namespace Microsoft.BotBuilderSamples
         public string Create_catalog { get; set; }
 
         //Create a separate intent SAP for all AMS related KB
-        public string SAP { get; set; }
+        public string sap_intent { get; set; }
 
         public string None { get; set; }
         public string Incident_status { get; set; }

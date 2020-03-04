@@ -117,10 +117,13 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
 
                 }
-                else if (incidentDetails.SAP.Equals("true") || incidentDetails.None.Equals("true"))
-                {
-                    incidentDetails.SAP = "false";
+               // else if (incidentDetails.sap_intent.Equals("true") || incidentDetails.None.Equals("true"))
+
+                    else if (incidentDetails.None.Equals("true"))
+                        {
+                    incidentDetails.sap_intent = "false";
                     incidentDetails.None = "false";
+                    
 
                     CoreBot.models.apiresult incidentno = null;
                     SNOWLogger nOWLogger = new SNOWLogger(Configuration);
