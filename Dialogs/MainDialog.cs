@@ -132,8 +132,13 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     if (!(userinput.ToUpper().Contains("KB0")))
                     {
                         incidentno = nOWLogger.KBSearchServiceNow("GOTO123TEXTQUERY321=" + stepContext.Context.Activity.Text.Trim());
-
-                        if (incidentno.result != null)
+                        if (incidentno == null)
+                        {
+                            await stepContext.Context.SendActivityAsync(
+                                MessageFactory.Text(" Sorry found null "), cancellationToken);
+                            return await stepContext.EndDialogAsync(null, cancellationToken);
+                        }
+                            if (incidentno.result != null)
                         {
 
                             if (incidentno.result.Count != 0)

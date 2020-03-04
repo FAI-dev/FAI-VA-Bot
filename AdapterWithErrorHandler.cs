@@ -20,7 +20,7 @@ namespace Microsoft.BotBuilderSamples
                 logger.LogError($"Exception caught : {exception.Message}");
 
                 // Send a catch-all apology to the user.
-                await turnContext.SendActivityAsync("Sorry Govind, VABot is in maintenance state. Please connect with the Bot team. ");
+                await turnContext.SendActivityAsync("Sorry, VABot is in maintenance state. Please connect with the Bot team. ");
 
                 if (conversationState != null)
                 {
